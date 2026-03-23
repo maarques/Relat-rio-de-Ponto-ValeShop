@@ -1,0 +1,37 @@
+# =========================
+# VARIÁVEIS DE AMBIENTE
+# =========================
+# Ignora as credenciais, IDs e senhas para o GitLab/GitHub!
+.env
+
+# =========================
+# SAÍDAS DO SISTEMA
+# =========================
+# Ignora todos os relatórios gerados pelos seus testes locais
+*.xlsx
+*.csv
+
+# =========================
+# AMBIENTES VIRTUAIS
+# =========================
+# Ignora as bibliotecas instaladas (o servidor vai instalar pelo requirements.txt depois)
+venv/
+.venv/
+env/
+
+# =========================
+# CACHE DO PYTHON
+# =========================
+# Ignora os arquivos binários que o Python gera automaticamente para rodar mais rápido
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# EDITORES DE CÓDIGO E SO
+# =========================
+# Ignora configurações pessoais da sua IDE (VS Code, PyCharm) e do sistema operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
