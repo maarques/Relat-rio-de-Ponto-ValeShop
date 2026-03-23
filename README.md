@@ -33,10 +33,12 @@ TENANT_ID=seu_tenant_id_aqui
 TEAM_ID=id_da_equipe_do_teams_aqui
 SHAREPOINT_HOSTNAME=nome_empresa.sharepoint.com
 SHAREPOINT_SITE_PATH=/sites/RH-Intranet
-2. Instalação das Bibliotecas
-Bash
+```
+### 2. Instalação das Bibliotecas
+```Bash
 pip install requests pandas msal python-dotenv openpyxl
-🗄️ Estrutura do Banco de Dados (Listas do SharePoint)
+```
+## 🗄️ Estrutura do Banco de Dados (Listas do SharePoint)
 Para que o motor funcione perfeitamente, o ambiente Microsoft 365 deve possuir as seguintes listas configuradas no SharePoint do RH:
 
 1. Contratos Colaboradores (Regras Base)
@@ -72,13 +74,14 @@ Status: Opção / Choice (Aprovado ou Rejeitado)
 5. Eventos (Calendário da Intranet Principal)
 A busca de feriados varre automaticamente o calendário raiz da empresa. O robô concede "RECESSO" se encontrar as palavras Feriado, Recesso ou Folga no Título ou na Categoria do evento.
 
-⚙️ Power Automate: Resumo dos Fluxos
+## ⚙️ Power Automate: Resumo dos Fluxos
 Este projeto depende de dois fluxos de Nuvem Automatizados (Forms -> Approvals -> SharePoint):
 
 Solicitação de Hora Extra: O funcionário preenche o dia e o motivo. O Automate lê a lista Contratos para descobrir o setor, lê a lista Gestores para descobrir o chefe, envia o card de aprovação para o chefe correto e salva a decisão no SharePoint.
 
 Solicitação de Férias: O funcionário preenche as datas de início e fim. O Automate envia o card de aprovação para o RH (sobrescrevendo o remetente nativo) e salva o período na lista de férias.
 
+```
 📂 Estrutura de Arquivos do Projeto
 Plaintext
 ├── main.py               # Arquivo principal (Maestro do fluxo ETL e Upload)
@@ -87,11 +90,14 @@ Plaintext
 ├── .env                  # Variáveis de ambiente (oculto no Git)
 ├── .gitignore            # Ignora o .env, cache e arquivos locais do Excel
 └── README.md             # Esta documentação
-▶️ Como Executar
+```
+
+## ▶️ Como Executar
 Com todas as dependências instaladas e o .env configurado, basta rodar o comando:
 
-Bash
+```Bash
 python main.py
+```
 Resultado esperado:
 O terminal informará os relatórios lidos, a classificação das datas (BINGO! de Férias/Feriados) e finalizará com a mensagem de SUCESSO ABSOLUTO confirmando que a planilha Relatorio_Ponto_ValeShop.xlsx foi gerada e enviada ao SharePoint.
 
